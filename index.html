@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Birthday Trishaaaa 🎉</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(
+                270deg,
+                #ff0080,
+                #7928ca,
+                #00c6ff,
+                #ffea00
+            );
+            background-size: 800% 800%;
+            animation: gradientBG 10s ease infinite;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.3);
+            animation: pop 1.5s ease;
+        }
+
+        @keyframes pop {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px rgba(255,255,255,0.7);
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+        }
+
+        .emoji {
+            font-size: 2.5rem;
+            animation: float 2s infinite alternate;
+        }
+
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-15px); }
+        }
+
+        button {
+            padding: 12px 28px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 30px;
+            background: #fff;
+            color: #ff0080;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background: #ffea00;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="emoji">🎂🎉💖</div>
+        <h1>Happy Birthday Trishaaaa!</h1>
+        <p>May your day be filled with love, laughter & magic ✨</p>
+        <button onclick="playMusic()">Play Music 🎶</button>
+    </div>
+
+    <!-- 🎶 Background Music -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="birthday.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+    </audio>
+
+    <script>
+        const music = document.getElementById("bgMusic");
+
+        // Auto play workaround (for mobile browsers)
+        document.body.addEventListener('click', () => {
+            music.play();
+        });
+
+        function playMusic() {
+            music.play();
+        }
+    </script>
+
+</body>
+</html>
